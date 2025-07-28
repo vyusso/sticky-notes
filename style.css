@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #4a4a4a;
+}
+
+.header-content {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin-bottom: 20px;
+}
+.technologies {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 0;
+  width: 220px;
+}
+.tech {
+  background-color: #4a4a4a;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 1.2em;
+}
+
+#title {
+  width: 220px;
+  position: absolute;
+  left: 50%;
+  margin-left: -110px;
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+a h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+a p {
+  font-size: 2rem;
+  font-family: "Reenie Beanie", cursive;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: black;
+  background: #ffc;
+  display: block;
+  height: 15em;
+  width: 15em;
+  padding: 1em;
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  transform: rotate(-6deg);
+  transition: transform 0.15s linear;
+}
+
+ul li:nth-child(even) a {
+  transform: rotate(4deg);
+  position: relative;
+  top: 5px;
+  background: #cfc;
+}
+
+ul li:nth-child(3n) a {
+  transform: rotate(-3deg);
+  position: relative;
+  top: -5px;
+  background: #ccf;
+}
+
+ul li:nth-child(5n) a {
+  transform: rotate(5deg);
+  position: relative;
+  top: -10px;
+}
+
+ul li a:hover,
+ul li a:focus-within {
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
+  position: relative;
+  z-index: 5;
+}
+
+ul li {
+  margin: 1em;
+  position: relative;
+}
+
+#add {
+  font-size: 3em;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20%;
+  position: fixed;
+  bottom: 50px;
+  right: 50%;
+  background-color: #4a4a4a;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  z-index: 10;
+}
+
+#add:hover {
+  box-shadow: -10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
+  transition: all 0.2s ease-in-out;
+}
+
+#clearAll {
+  font-size: 3em;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20%;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background-color: #4a4a4a;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  z-index: 10;
+}
+
+#clearAll:hover {
+  box-shadow: -10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
+  transition: all 0.2s ease-in-out;
+}
+
+.note {
+  position: relative;
+}
+
+.note h2:empty::before {
+  content: "Title...";
+  color: gray;
+  pointer-events: none;
+}
+
+.note p:empty::before {
+  content: "Write your note...";
+  color: gray;
+  pointer-events: none;
+  font-style: italic;
+}
+
+.note h2:focus,
+.note p:focus {
+  outline: none;
+}
+
+.delete {
+  font-size: 2rem;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  background-color: #4a4a4a00;
+  color: black;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  z-index: 10;
+  border-radius: 20%;
+}
+
+.delete:hover {
+  box-shadow: -10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
+  transition: all 0.2s ease-in-out;
+}
+
+.delete:active {
+  box-shadow: -10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
+  transition: all 0.2s ease-in-out;
+}
+
+.noteContainer {
+  position: relative;
+  display: inline-block; /* or block, depending on layout */
+  width: 15em; /* same as your note size */
+  height: 15em;
+}
+
+/* ul li .delete {
+  transform: rotate(-6deg);
+}
+ul li:nth-child(even) .delete {
+  transform: rotate(4deg);
+}
+ul li:nth-child(3n) .delete {
+  transform: rotate(-3deg);
+}
+ul li:nth-child(5n) .delete {
+  transform: rotate(5deg);
+} */
+
+.top {
+  display: grid;
+  grid-template-columns: 8fr 1fr;
+  justify-content: space-between;
+  word-break: break-all;
+}
